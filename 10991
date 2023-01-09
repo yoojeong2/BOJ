@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(void){
+    int n=0;
+    cin>>n;
+   int space = n-1;
+   for(int i=1;i<=n;i++){
+       int ety = space;
+       while(ety--){
+         cout<<" ";
+       }
+       if(i==1)cout<<"*";
+       else if(i>1){
+           cout<<"*";
+           int sL=i-1;
+           while(sL--){
+               cout<<" *";
+           }
+       }
+        space--;
+        if(i==n)break;
+        cout<<endl;
+   }
+}
