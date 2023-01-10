@@ -1,0 +1,18 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main(void){
+    map <int,int> mapNum;
+    int max = 0;
+    int tmp;
+    for(int i=0;i<9;i++)
+   {
+        cin>>tmp;
+        mapNum.insert({tmp,i});
+        if(tmp>max)max = tmp;
+   }
+      cout<<max<<endl;
+      auto idx = mapNum.find(max);
+      cout<<(idx->second)+1<<endl;
+}
