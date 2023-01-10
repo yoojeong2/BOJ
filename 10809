@@ -1,0 +1,19 @@
+#include <string.h>
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main(void){
+ int alpha[26];
+ fill_n(alpha,26,-1);
+ char prob[101];
+ scanf("%s",&prob);
+ for(int i = 0; i<strlen(prob);i++)
+ {
+     int locM = prob[i]-'a'; 
+     if(alpha[locM] == -1) alpha[locM] = i; 
+ }
+ for(int j=0;j<26;j++){
+ printf("%d ",alpha[j]);    
+ }
+}
