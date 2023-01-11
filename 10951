@@ -1,0 +1,20 @@
+#include <iostream> 
+using namespace std;
+
+int main(void)
+    {
+    int a,b;
+    while(true){
+    try{
+        cin>>a>>b;
+        if (cin.fail()){
+            throw "err";
+            
+            }
+        cout<<a+b<<endl;
+
+    }
+catch(...){//do nothig
+   break;
+}
+}}
