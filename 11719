@@ -1,0 +1,15 @@
+#include <string.h>
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+
+string s;
+while(true){
+    getline(cin,s);
+    if(cin.fail())break;
+    cout<<s<<endl;
+}
+}
