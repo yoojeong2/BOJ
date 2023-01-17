@@ -1,0 +1,23 @@
+#include <string.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(void){
+
+int dice[3];
+int score = 0;
+vector<int> game;
+cin>>dice[0]>>dice[1]>>dice[2];
+for(int i=0;i<3;i++)game.push_back(dice[i]);
+sort(game.begin(),game.end());
+if(game[0]==game[1]&&game[1]==game[2]){
+    score = 10000+game[0]*1000;
+}else if(game[0]==game[1] || game[2]==game[1]){
+     score = 1000 + game[1]*100;
+}else {
+    score = game[2]*100;
+}
+cout<<score<<endl;
+}
