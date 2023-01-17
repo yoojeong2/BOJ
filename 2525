@@ -1,0 +1,22 @@
+#include <string.h>
+#include <iostream>
+using namespace std;
+
+int main(void){
+
+int sh,sm;
+int pt;
+cin>>sh>>sm;
+cin>>pt;
+int ph,pm;
+ph = pt/60;
+pm = pt%60;
+sh += ph;
+sm += pm;
+if(sm >= 60) {
+    sh+=1;
+    sm-=60;
+}
+if(sh >= 24) sh -=24;
+cout<<sh<< " " <<sm;
+}
