@@ -1,0 +1,17 @@
+#include <string.h>
+#include <iostream>
+using namespace std;
+
+int main(void){
+
+int x,y;
+string comp[3]={"<","==",">"};
+cin>>x>>y;
+string res;
+if(x>y){
+    res = comp[2];
+}else if(x==y){
+    res = comp[1];
+}else res = comp[0];
+cout<<res<<endl;
+}
