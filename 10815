@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+bool binary_search(vector<int> &data, int start,int end, int dat){
+    if(start>end) return false;
+    int mid = (start + end) /2;
+    
+    int len_data = end - start + 1;
+    
+    if(data[mid] == dat && len_data==1) return true;
+    if(data[mid] != dat && len_data==1) return false;
+    
+    if(len_data==0)return false;
+    
+    if(dat < data[mid]) return binary_search(data,start,mid-1,dat);
+    
+    else if (dat > data[mid]) return binary_search(data,mid+1,end,dat);
+    else return true;
+        
+    return false; 
+}
+
+int main(void)
+{
+    vector<int> A;
+    vector<int> B;
+    int N,M,tmp;
+    scanf("%d",&N);
+    for(int i=0;i<N;i++){
+       scanf("%d",&tmp);
+        A.push_back(tmp);
+    }
+    scanf("%d",&M);
+    sort(A.begin(),A.end());
+   
+    for(int i=0;i<M;i++){
+    scanf("%d",&tmp);
+    int res = binary_search(A,0,N-1,tmp);
+   printf("%d ",res);
+    } printf("\n");
+    
+}
