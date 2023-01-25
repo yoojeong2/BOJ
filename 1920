@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+#define MAX_NUM = 100000;
+
+bool binary_search(vector<int> &data, int start,int end, int dat){
+    if(start>end) return false;
+    int mid = (start + end) /2;
+    
+    int len_data = end - start + 1;
+   // cout<<mid<<" "<<dat<<" "<<data[mid]<<endl;
+    
+    if(data[mid] == dat && len_data==1) return true;
+    if(data[mid] != dat && len_data==1) return false;
+    
+    if(len_data==0)return false;
+    
+    if(dat < data[mid]) return binary_search(data,start,mid-1,dat);
+    
+    else if (dat > data[mid]) return binary_search(data,mid+1,end,dat);
+    else return true;
+        
+    return false; 
+}
+
+
+int main(void)
+{
+    int n,m;
+    vector<int> A;
+    vector<int> B;
+    scanf("%d",&n);
+    int tmp;
+    for(int i=0;i<n;i++){
+    scanf("%d",&tmp);
+    //    scanf("%d",&n)
+        A.push_back(tmp);
+    }
+    scanf("%d",&m);
+    
+    for(int i=0;i<m;i++){
+        scanf("%d",&tmp);
+    
+        B.push_back(tmp);
+    }
+    sort(A.begin(),A.end());
+    
+    for(int i=0;i<m;i++){
+        int res = binary_search(A,0,n-1,B[i]);
+    
+        printf("%d\n",res);
+    }
+    
+    
+}
