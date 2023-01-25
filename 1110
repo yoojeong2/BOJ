@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+  int num;
+  cin>>num;
+  int n1,n2,n3;
+  
+  n1 = num/10; 
+  n2 = num%10;
+  
+  string s = to_string(n1)+to_string(n2);
+    int cnt = 0;
+  string nS = "";  
+  while (true){
+       if(nS == s) break;
+      if(nS!="") {
+          num = stoi(nS);
+          n1 = num/10;
+          n2 = num%10;
+      }
+       n3 = (n1 + n2)%10;
+       
+       nS.assign(to_string(n2)+to_string(n3));
+      cnt++;
+  }
+  cout<<cnt<<endl;
+}
