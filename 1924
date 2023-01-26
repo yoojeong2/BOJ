@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
+using namespace std;
+
+int main(void){
+
+string day[7]={"SUN","MON","TUE","WED","THU","FRI","SAT"};
+	int month, d;
+	cin>>month>>d;
+int days = 0;
+days += d;
+while(1) {
+    if(month==1)break;
+    switch(month){
+        case 2:
+        case 4:
+        case 6:
+        case 8:
+        case 9:
+        case 11:
+        case 1:
+      
+            days+=31;
+            break;
+        case 3:
+
+            days +=28;
+            break;
+        case 5:
+        case 7:
+        case 10:
+        case 12:
+
+            days+=30;
+            break;
+        default:
+            break;
+    }
+    month-=1;
+    
+}
+
+cout<< day[days % 7]<<endl;
+}
