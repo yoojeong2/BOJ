@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+int selfNum[10001] = { 0 };
+
+int dN(int num){
+    int nM = num + (num/1000) + ((num%1000)/100) +((num%100)/10) + num%10;
+
+    return nM;    
+}
+int main()
+{
+   for(int i=1;i<10001;i++){
+      int ret = dN(i);
+      selfNum[ret] = 1;
+   }
+   for(int i=1;i<10001;i++){
+    if(!selfNum[i]) cout<<i<<endl;
+   }
+}
