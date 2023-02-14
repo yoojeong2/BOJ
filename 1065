@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+int hanSu(int num){
+    int cnt = 0;
+    for(int i = 1;i<=num;i++){
+        if(i>=100){//3자리
+            if(((i/100)-(i%100)/10) ==((i%100)/10-i%10)) cnt+=1;
+            else continue;
+        }
+        else // 1~2자리
+        {
+            cnt+=1;
+        }
+    }
+    return cnt;
+}
+int main()
+{
+
+   int n,ans;
+   cin>>n;
+   ans = hanSu(n);
+   
+   cout<<ans<<endl;
+}
