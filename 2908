@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <cstring>
+#include <iostream>
+using namespace std;
+int invNum(int num){
+int f,s,t;
+f = num/100;
+s = (num%100)/10;
+t = (num%10);
+return t*100+s*10+f;
+}
+int main(void){
+
+int s1t,s2t;  
+scanf("%d %d",&s1t,&s2t);
+
+s1t = invNum(s1t);
+s2t = invNum(s2t);
+
+if(s1t > s2t){printf("%d\n",s1t);}
+else{ printf("%d\n",s2t);}
+}
