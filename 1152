@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <cctype>
+#include <cstring>
+int main(void){
+
+char s[1000003];
+int cnt = 0;
+
+scanf("%[^\n]s",s);
+
+if((int)strlen(s)==1 && isspace(s[0])) cnt = 0;
+else cnt = 1;
+    
+for(int i=0;i<(int)strlen(s);i++)
+{
+    
+   if(isspace(s[i]))
+   {
+       if(i==0)
+       {
+           // no
+       }
+       else if(i==(int)strlen(s)-1){
+           // no
+       }
+       else{
+        cnt+=1;   
+       }
+   }    
+   else {
+       // Do nothing
+   }
+}
+printf("%d\n",cnt);
+}
