@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <cstring>
+#include <iostream>
+using namespace std;
+int dialNum(char num){
+    int ret = 0;
+    switch (num){
+        case 'A':
+        case 'B':
+        case 'C':
+            ret = 2;
+            break;
+        case 'D':
+        case 'E':
+        case 'F':
+        ret = 3;
+            break;
+        case 'G':
+        case 'H':
+        case 'I':
+        ret = 4;
+            break;
+        case 'J':
+        case 'K':
+        case 'L':
+        ret = 5;
+            break;
+        case 'M':
+        case 'N':
+        case 'O':
+        ret = 6;
+            break;
+        case 'P':
+        case 'Q':
+        case 'R':
+        case 'S':
+        ret = 7;
+            break;
+        case 'T':
+        case 'U':
+        case 'V':
+        ret = 8;
+            break;
+        case 'W':
+        case 'X':
+        case 'Y':
+        case 'Z':
+        ret = 9;
+            break;
+    }
+    return ret;
+}
+int main(void){
+char dial[16];
+scanf("%s",dial);
+int t = 0;
+for(int i=0;dial[i]!='\0';i++){
+  if(dial[i]==0){
+      t+=10;
+  }  else if (dial[i]==1){
+      t+=1;
+  }else {
+      t+=dialNum(dial[i]);
+  }
+  if(dial[i+1]=='\0')t+=(i+1); // 끝이면 전체 길이 더해줌 (리셋)
+}
+
+printf("%d\n",t);
+}
