@@ -1,0 +1,24 @@
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main(){
+string str;
+cin>>str;
+
+string croa[8] = {"c=","c-","dz=","d-","lj","nj","s=","z="};
+for(int i=0;i<8;i++)
+{
+    while(1){
+    int idx = str.find(croa[i]);
+        if(idx == string::npos) break;
+        
+        str = str.replace(idx,croa[i].length(),"*");
+    }
+    
+  
+}
+cout<<str.length()<<endl;
+return 0;
+}
