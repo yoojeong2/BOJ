@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main(void)
+{
+    int player[6] = {1,1,2,2,2,8};
+    
+    int a,b,c,d,e,f;
+    cin>>a>>b>>c>>d>>e>>f;
+    cout<<(player[0]-a)<<" "<<(player[1]-b)<<" "<<(player[2]-c)<<" "<<(player[3]-d)<<" "<<(player[4]-e)<<" "<<(player[5]-f)<<endl;
+}
