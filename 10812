@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int basket[101];
+void change(int i,int j,int k)
+{
+     vector<int> tmp;
+     int idx = 0;
+     for(int x=k;x<=j;x++)tmp.push_back(basket[x]);
+     for(int x=i;x<k;x++)tmp.push_back(basket[x]);
+     for(int x=i;x<=j;x++)basket[x] = tmp[idx++];
+}
+int main(void){
+   int n,m;
+
+   cin>>n>>m;
+   for(int i = 1;i<=n;i++)
+   {
+       basket[i] = i;
+   }
+   for(int x=0;x<m;x++){
+       int i,j,k; // k 기준
+       cin>>i>>j>>k;
+        change(i,j,k);
+   }
+   for(int i=1;i<n;i++) cout<<basket[i]<<" ";
+   cout<<basket[n]<<endl;
+}
+
