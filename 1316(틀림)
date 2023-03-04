@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int chkGN(std::string curStr){
@@ -13,8 +12,7 @@ int chkGN(std::string curStr){
             strChar[tmp] +=1; 
         }
         else 
-        {
-           
+        {   
             if (curStr[i] == curStr[i-1])
             {
                 strChar[tmp] +=1;
@@ -30,13 +28,13 @@ int chkGN(std::string curStr){
                 }
                 else 
                 {
+                    strChar[tmp] +=1;
                     continue;
                 }
             }
         }
     }
-    return 1;
-    
+    return 1;    
 }
 int main(void){
 
@@ -51,4 +49,3 @@ int main(void){
     }
     cout<<gN<<endl;
 }
-
