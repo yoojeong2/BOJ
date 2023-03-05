@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int N;
+    cin>>N;
+    int ans = 0;
+    
+    while(N>=0){
+    if(N%5 ==0){ // 남은 무게 나누어 떨어지는 경우 종료
+        ans +=(N/5);
+        cout<<ans<<endl;
+        return 0;
+    }
+        N-=3; // 3kg짜리 가방 추가
+        ans++;
+    }  
+    cout<<-1<<endl;
+}
