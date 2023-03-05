@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int A,B,V;
+    int days = 1;;
+    cin>>A>>B>>V;
+    days += (V - A) / (A - B);
+
+    if (A >= V) cout<<1<<endl;
+    else if ((V - A) % (A - B) == 0) cout<<days<<endl;
+    else 
+    {
+        cout<<days+1<<endl;
+    }
+}
