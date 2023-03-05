@@ -1,0 +1,49 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int n=0,k=0,tmp = 0;
+    cin>>n;
+    int x,y;
+    while(1)
+    {
+        if (n * 2 <= k * ( k + 1))
+        {
+            break;
+        }
+        k++;
+    }
+    tmp = ((k + 1)* k) / 2;
+    tmp -= n; // 끝에서 차이나는 숫자
+    if (n == 1)
+    {
+        x = 1;
+        y = 1;
+    }
+    else if (k % 2 == 0) // 짝
+    {
+        // 대각선 아래로 가며 순번 증가
+        x = (k - tmp); //분자
+        y = (1 + tmp); //분모
+    }
+    else // 홀
+    {
+        //대각선 위로 가며 순서 증가
+        x = (1 + tmp); //분자
+        y = (k - tmp); //분모
+    }
+    cout<< x<<"/"<<y;
+}
