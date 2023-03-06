@@ -1,0 +1,42 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <cstring>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    string A,B;
+    cin>>A>>B;    
+    int aLen = A.length();
+    int bLen = B.length();
+    vector <int> ans;
+    int max_cnt = (aLen>bLen)?aLen:bLen;
+    int carry = 0;
+    for(int i=1;i<=max_cnt;i++)
+    {
+        int idxA = aLen - i;
+        int idxB = bLen - i;
+        int a=0,b = 0;
+        if(idxA >= 0) a = A[idxA] - '0';
+        if(idxB >= 0) b = B[idxB] - '0';
+        int cur_sum = a+b+carry;
+        carry = cur_sum / 10;
+        ans.push_back(cur_sum%10);
+       // cout<< idxA<<" "<<idxB<<" "<<a<<" "<<b<<" "<<carry<<endl;
+    }
+    if (carry != 0) ans.push_back(carry);
+    max_cnt = ans.size();
+    for(int i=1;i<=max_cnt;i++){
+        cout<<ans[max_cnt-i];
+    }
+    cout<<endl;
+}
